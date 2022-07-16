@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理系统</title>
+    <style>
+      .login{
+        width: 320px;
+        height: 350px;
+        background: #f0f0f0;
+        opacity: 0.75;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -130px;
+        margin-left: -180px;
+        border-radius: 5px;
+        padding: 20px;
+      }
+      .login h2{
+        text-align: center;   
+      }
+      #userID,#userPwd,#captcha{
+        font-size: 14px;
+        padding-left: 25px;
+        height: 30px;
+        width: 220px;
+        margin-top: 10px;
+        border: 1px solid #cccccc;
+      }
+      #userID{
+        background: url("id.png") no-repeat center left;
+      }
+      #userPwd{
+        background: url("pwd.png") no-repeat center left;
+      }
+      #captcha{
+        line-height: 30px;
+      }
+      .btn{
+        height: 30px;
+        width: 310px;
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: #337ab7;
+        color: #ffffff;
+        border: none;
+      }
+      .btn a{
+        text-decoration: none;
+      }
+      .buqing{
+        text-decoration: none;
+        margin-left: 93px;
+        top: 20px;
+      }
+      img{
+        position: absolute;
+        top: 230px;
+        left: 22px;
+      }
+    </style>
+</head>
+<body>
+<div class="login">
+    <h2>用户登录</h2>
+        <form action="doLogin.php" method="post">
+           用户名：<input type="text" placeholder="请输入用户名"  name="userID" required id="userID">
+           密&nbsp&nbsp&nbsp码：<input type="password" placeholder="请输入密码"  name="userPwd" required id="userPwd">
+           验证码：<input type="text" placeholder="请输入验证码" name="captcha" required id="captcha"><img class="tupian" src="captcha.php" id="captcha_img"><br><a href="#" id="change" class="buqing">看不清，换一张</a>
+        </br>
+           <p style="color:red">   <?=$ErrorMeg?></p>
+           <button class="btn" type="submit">登&nbsp&nbsp录</button>
+        
+           <button class="btn"><a href="register.php">注&nbsp&nbsp册</a></button>
+        </form>
+    </div>
+</body>
+<script>
+     var change=document.getElementById("change");
+    var img=document.getElementById("captcha_img");
+    change.onclick=function(){
+        //增加一个随机参数，防止图片缓存
+        img.src="captcha.php?t="+Math.random();
+        return false;//阻止超链接默认的跳转动作
+    }
+</script>
+</html>

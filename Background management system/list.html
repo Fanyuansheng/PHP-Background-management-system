@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="layui.css">
+    <link rel="stylesheet" href="layui.js">
+</head>
+<body>
+    <style> 
+      h1 {
+            text-align: center;
+        }
+        .page {
+            padding: 50px;
+            text-align: center;
+        }
+        form{
+            text-align: center;
+        }
+        .hezi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .hezi th{
+            background-color: rgb(150, 210, 240);
+            text-align: center ;
+        }
+        th{
+            background-color: #dadbdc;
+        }
+        th,td{
+            border: 1px solid #000;
+            height: 30px;
+            text-align: center;
+        }
+        .page a{
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #007ddb;
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+        }
+        .current{
+            background-color: #007ddb;
+            color: #fff;
+        }
+    </style>
+    <div class="layui-table ">
+        <h1>学生信息展示</h1>
+        <form class="layui-form" style="margin: 25px">
+            <div class="layui-form-item">
+                <label class="layui-form-label">查询学生</label>
+                <div class="layui-input-block">
+                    <input type="text" name="keyword" autocomplete="off" placeholder="请输入查询关键字" class="layui-input" value="<?isset($keyword)?$keyword:''?>">
+                </div>
+            </div>
+            
+            <!-- <input class="layui-input" type="text" name="keyword" placeholder="请输入查询关键字" value="<?isset($keyword)?$keyword:''?>" > -->
+            <input class="layui-btn" type="submit" value="搜索">
+        </form>
+        <div class="hezi">
+            <table class="layui-table" lay-skin="line">
+                <tr>
+                    <th>姓名</th>
+                    <th>学号</th>
+                    <th>性别</th>
+                    <th>手机号</th>
+                    <th>班级</th>
+                    <th>修改</th>
+                    <th>删除</th>
+                </tr>
+                <?php
+            foreach($dataArr as $row){
+                ?>
+                <tr>
+                    <td>
+                        <?= $row["userName"] ?>
+                    </td>
+                    <td>
+                        <?= $row["userID"] ?>
+                    </td>
+                    <td>
+                        <?= $row["Gender"] ?>
+                    </td>
+                    <td>
+                        <?= $row["Number"] ?>
+                    </td>
+                    <td>
+                        <?= $row["Class"] ?>
+                    </td>
+                    <td><button class="layui-btn"><a href="modify.php?id=<?=$row['userID']?>">修改</a></button></td>
+                    <td><button class="layui-btn layui-btn-danger layui-btn-lg"><a  href="delete.php?id=<?=$row['userID']?>" onclick="return confirm('删除后将无法恢复，是否确定删除？')">删除</a></button></td>
+                </tr>
+                <?php   
+            }
+            ?>
+            </table>
+        </div>
+        <div class="page">
+            每页
+            <?=$pageSize?>条数据&nbsp;&nbsp;当前第
+            <?=$page?>页&nbsp;&nbsp;共
+            <?=$maxPage?>页&nbsp;&nbsp;
+            <a href="?page=1">首页</a>
+            <a href="?page=<?=$page-1>0?$page-1:1?>">上一页</a>
+            <a href="?page=<?=$page+1<$maxPage?$page+1:$maxPage?>">下一页</a>
+            <a href="?page=<?=$maxPage?>">末页</a>
+        </div>
+    </div>
+    
+</body>
+</html>

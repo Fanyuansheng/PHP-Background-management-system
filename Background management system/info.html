@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生个人信息</title>
+    <link rel="stylesheet" href="layui.css">
+    <style>
+        h2{
+            text-align: center;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="layui-form">
+    <h2>学生个人信息</h2>
+    <form action="info.php" enctype="multipart/form-data" method="post" >
+        <table class="layui-table">
+            <tr>
+                <td>学号</td>
+                <td><input type="text" name="userID" value="<?=$data['userID']?>"></td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td><input type="text" name="userName" value="<?=$data['userName']?>"></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="Gender" value="男" title="男" id="male" <?=$data['Gender']=='男'?'checked':''?> >
+                    <!-- <label for="male">男</label> -->
+                    <input type="radio" name="Gender" value="女" title="女" id="female" <?=$data['Gender']=='女'?'checked':''?>>
+                    <!-- <label for="female">女</label> -->
+                </td>
+            </tr>
+            <tr>
+                <td>手机号</td>
+                <td><input type="text" name="Number" value="<?=$data['Number']?>"></td>  
+            </tr>
+            <tr>
+                <td>班级：</td>
+                <td>
+                    <select name="Class" >
+                        <option value="计算机科学与技术1班"  <?=$data['Class']=='计算机科学与技术1班'?'selected':''?> >计算机科学与技术1班</option>
+                        <option value="计算机科学与技术2班"  <?=$data['Class']=='计算机科学与技术2班'?'selected':''?> >计算机科学与技术2班</option>
+                        <option value="软件工程1班"    <?=$data['Class']=='软件工程1班'?'selected':''?> >软件工程1班</option>
+                        <option value="软件工程2班"  <?=$data['Class']=='软件工程2班'?'selected':''?>  >软件工程2班</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>头像</td>
+                <td colspan="6">
+                      <img src="<?=$img?>" width="100px" height="80px"/>
+                      <input  type="file"  name="file" value=""/>
+                 </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <input class="layui-btn" type="submit" value="立即提交" class="btn">
+                    <input class="layui-btn" type="reset"  value="重新填写" class="btn">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script src="layui.js"></script>
+<script>
+    //Demo
+layui.use('form', function(){
+  var form = layui.form;
+  //其他操作
+});
+//获取选中的值
+$("input[name='sex']:checked").val();
+//设置选中(性别中设置男为选中)
+$("input[name='sex'][value='男']").prop("checked",true);
+layui.form.render();//实时渲染选中和不选中的样式,最好添加这句话
+
+</script>
+</html>

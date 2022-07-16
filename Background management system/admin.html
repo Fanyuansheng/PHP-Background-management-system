@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理中心</title>
+    <link rel="stylesheet" href="layui.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .page {
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            width: 320px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">学生管理系统</div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item layui-this">
+                    管理员：
+                    <?=$name?>
+                </li>
+                <li class="layui-nav-item"><a href="logout.php">退出</a></li>
+            </ul>
+        </div>
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="layui-this" href="javascript:;" onclick="SelectTab('list')">学生信息</a>
+                        <dl class="layui-nav-child">
+                            <!-- <dd><a href="modify.php?id=<?=$row['id']?>">修改学生</a></dd> -->
+                            <dd><a href="#" onclick="SelectTab('add')">添加学生</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="#" onclick="SelectTab('info')">个人信息</a></li>
+                    <li class="layui-nav-item"><a href="export.html">学生信息批量导入</a></li>
+                    <li class="layui-nav-item"><a href="">学生名单批量导出</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body">
+            <div class="layui-footer">
+                学生管理系统V1.0
+            </div>
+            <iframe src="list.php" id="iframElemnt" width="100%;" height="100%"></iframe>
+            <script src="layui.js"></script>
+            <script>
+                layui.use('element', function () {
+                    var element = layui.element;
+                });
+
+                function SelectTab(v) {
+                    var ifrem = document.getElementById("iframElemnt")
+                    if (v == 'list') {
+                        ifrem.setAttribute("src", 'list.php')
+                    }
+                    if (v == 'add') {
+                        ifrem.setAttribute("src", 'regist.php')
+                    }
+                    if(v=='info'){
+                        ifrem.setAttribute("src", 'info.php')
+                    }
+                }
+            </script>
+        </div>
+</body>
+
+</html>
