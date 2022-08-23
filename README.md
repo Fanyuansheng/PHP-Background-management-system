@@ -3,6 +3,7 @@
 * 找到bug算我输好吧🤸‍♀️🤸‍♂️<br>
 * 喜欢的可以点个小星星🤞<br>
 * [我的博客](http://www.fanyuansheng.top "悬停显示") 
+* [layui](https://www.layuiweb.com)
 ``` python
 @requires_authorization
 def somefunc(param1='', param2=0):
