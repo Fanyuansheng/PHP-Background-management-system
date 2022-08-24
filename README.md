@@ -3,7 +3,7 @@
 * 找到bug算我输好吧🤸‍♀️🤸‍♂️<br>
 * 喜欢的可以点个小星星🤞<br>
 * [layui官网](https://www.layuiweb.com)<br>
-## php手写验证码
+## PHP手写验证码
 ``` php
 <?php
 $imgWidth=70;
