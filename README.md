@@ -1,8 +1,10 @@
 # PHP-Background-management-system
 * 用`PHP`和`layui`搭建的学生后台管理系统
+* 服务器来自于[阿里云](https://cn.aliyun.com/)<br>
 * 找到bug算我输好吧🤸‍♀️🤸‍♂️<br>
 * 喜欢的可以点个小星星🤞<br>
 * [layui官网](https://www.layuiweb.com)<br>
+* [PHP官网](https://www.php.net/)<br>
 ## PHP手写验证码
 ``` php
 <?php
