@@ -5,7 +5,7 @@
     
 * 服务器来自于[阿里云](https://cn.aliyun.com/)<br>
 * 找到bug算我输好吧🤸‍♀️🤸‍♂️<br>
-* 喜欢的可以点个小星星🤞<br>
+* 喜欢的可以点个小星星🤞<br> 
 * [layui官网](https://www.layuiweb.com)&[PHP官网](https://www.php.net/)<br>
 ## PHP手写验证码
 ```php
