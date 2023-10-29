@@ -11,7 +11,7 @@
 ```php
 <?php
 $imgWidth=70;
-$imgHeight=22;
+$imgHeight=22; 
 $charLen=5;
 $fontSize=5;
 //保存验证码字符串
