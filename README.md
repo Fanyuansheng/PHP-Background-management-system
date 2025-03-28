@@ -1,7 +1,7 @@
 # PHP-Background-management-system
 <p align="center">
     <h1 align="center">用PHP和layui搭建的学生后台管理系统</h1>
-</p><br>
+</p><br>  
       
 * 服务器来自于[阿里云](https://cn.aliyun.com/)<br>
 * 找到bug算我输好吧🤸‍♀️🤸‍♂️<br> 
