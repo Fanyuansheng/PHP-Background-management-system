@@ -10,7 +10,7 @@
 ## PHP手写验证码
 ```php
 <?php
-$imgWidth=70;
+$imgWidth=70; 
 $imgHeight=22; 
 $charLen=5;
 $fontSize=5;
