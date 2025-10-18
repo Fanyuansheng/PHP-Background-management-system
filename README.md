@@ -8,7 +8,7 @@
 * 喜欢的可以点个小星星🤞<br>  
 * [layui官网](https://www.layuiweb.com)&[PHP官网](https://www.php.net/)<br>
 ## PHP手写验证码
-```php 
+```php  
 <?php
 $imgWidth=70; 
 $imgHeight=22; 
